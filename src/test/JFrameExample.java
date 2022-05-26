@@ -1,5 +1,7 @@
 package test;
-import java.awt.FlowLayout;  
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import javax.swing.JButton;  
 import javax.swing.JFrame;  
 import javax.swing.JLabel;  
@@ -7,19 +9,34 @@ import javax.swing.JPanel;
 import acm.program.*;
 import acm.graphics.*;
 public class JFrameExample extends GraphicsProgram{  
+	
+	public static int width = 400;
+	public static int height = 500;
+	
+	public void init()
+    {
+    	addMouseListeners();
+    	addKeyListeners();
+    }
+	
     public static void main(String s[]) {  
-        JFrame frame = new JFrame("JFrame Example");  
+        JFrame frame = new JFrame("JFrame ");  
         JPanel panel = new JPanel();  
-        panel.setLayout(new FlowLayout());  
-        JLabel label = new JLabel("JFrame By Example");  
-        JButton button = new JButton();  
-        button.setText("Button");  
-        panel.add(label);  
-        panel.add(button);  
-        frame.add(panel);  
-        frame.setSize(200, 300);  
+        JButton button = new JButton(); 
+        
+        button.setText("Button"); 
+        button.setBounds(150, 300, 100, 50);
+        
+        panel.setBounds(50,100,300,300);
+        panel.setLayout(new GridLayout(4,4,10,10));
+        panel.setBackground(Color.red);
+
+        frame.setLayout(null);
+        frame.add(button);
+        frame.add(panel); 
+        
+        frame.setSize(width, height);  
         frame.setLocationRelativeTo(null);  
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         frame.setVisible(true);  
     }  
 }  
