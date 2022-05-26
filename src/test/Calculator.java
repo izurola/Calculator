@@ -19,7 +19,7 @@ public class Calculator implements ActionListener{
 	
 	int width = 400;
 	int height = 500;
-	JFrame frame = new JFrame("JFrame ");  
+	JFrame frame = new JFrame("Calculator");  
 	JPanel panel = new JPanel();  
 	JButton[] numberButtons = new JButton[10];
 	JButton[] functionButtons = new JButton[10];
